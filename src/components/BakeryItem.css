@@ -1,0 +1,14 @@
+.BakeryItem {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding-top: 3vh;
+}
+
+img {
+    width: 50%;
+}
+
+button {
+    width: 30%;
+}

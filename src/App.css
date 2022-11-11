@@ -5,5 +5,12 @@
 }
 
 .BakeryItem {
+    width: 500;
   
+}
+
+.bakery-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
