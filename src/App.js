@@ -105,7 +105,7 @@ function App() {
 
   function resetSort() {
     console.log("resetting");
-    setSortedGallery(productGallery);
+    setSortedGallery([...productGallery]);
   }
 
   function ascOrder() {
