@@ -59,7 +59,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-left: 4vw; 
+    padding-left: 3vw; 
     padding-bottom: 3vh !important;
     outline-style: solid;
     border-radius: 20px;
@@ -132,7 +132,6 @@
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     background-color:rgb(255, 230, 121) !important;
-    /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4); */
 }
 
 .navbar {
@@ -143,7 +142,7 @@
 }
 
 /* SORTING FUNCTIONALITY*/
-#ascending-bttn {
+#ascending-bttn{
     width: 12vw;
     font-family: 'Times New Roman', Times, serif;
     background-color:rgb(255, 230, 121) !important;
@@ -151,6 +150,11 @@
     font-size: 1.2vw;
     
 }
+
+#ascending-bttn:focus, #descending-bttn:focus, #reset-bttn:focus
+{ background:rgb(205, 157, 0) !important }
+
+
 #descending-bttn {
     width: 12vw;
     font-family: 'Times New Roman', Times, serif;
@@ -158,6 +162,7 @@
     border-color:rgb(255, 230, 121) !important;
     font-size: 1.2vw;
 }
+
 #reset-bttn {
     width: 12vw;
     font-family: 'Times New Roman', Times, serif;
@@ -166,9 +171,17 @@
     font-size: 1.2vw;
 }
 .sort-container{
-    width: 40vw !important;
+    width: 50vw !important;
     display: flex;
     justify-content: space-evenly;
+}
+
+.sort-price-title {
+  
+    font-size: 1.5vw !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    text-decoration: underline;
+    font-weight: bold;
 }
 .sort-row{
     padding-top: 6vh;

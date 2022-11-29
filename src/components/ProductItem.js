@@ -18,6 +18,7 @@ function ProductItem(props) {
                 <div className="card-body">
                     <h5 className="card-title">{props.item.name}</h5>
                     <p className="card-category"> ({props.item.category}) </p>
+                    <p className="card-price">  ${props.item.price} </p>
                     <p className="card-text">{props.item.description}</p>
                     <p className="card-artist"> ~ {props.item.artist} </p>
                     <Row className="button-row">

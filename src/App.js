@@ -8,8 +8,6 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Dropdown from 'react-bootstrap/Dropdown';
 
 /* ####### DO NOT TOUCH -- this makes the image URLs work ####### */
 bakeryData.forEach((item) => {
@@ -20,7 +18,6 @@ bakeryData.forEach((item) => {
 function App() {
   // CART FUNCTIONALITY ########################################################
   const [cartItems, setCartItems] = useState([])
-  const [totalPrice, countTotalPrice] = useState(0);
 
   function addToCart(item) {
     const exist = cartItems.find((x) => x.name === item.name)
@@ -39,7 +36,7 @@ function App() {
   }
 
   function calculateTotal() {
-    let total = 0
+    let total = 0.00
     for (let i = 0; i < cartItems.length; i++) {
       total += cartItems[i].price
     }
@@ -91,7 +88,7 @@ function App() {
   // ###########################################################################
 
   // HANDLING SORT FUNCTIONALITY 
-  const [sortedArray, setSortedGallery] = useState(productGallery);
+  const [sortedArray, setSortedGallery] = useState([...productGallery]);
   const [sortType, setSortType] = useState("Default");
   
   function handleAscendingSort(eventKey) {
@@ -104,7 +101,6 @@ function App() {
   }
 
   function resetSort() {
-    console.log("resetting");
     setSortedGallery([...productGallery]);
   }
 
@@ -119,19 +115,8 @@ function App() {
       return b.price - a.price;
     }));
   }
-  // const sorted = productGallery.sort((a,b) => {
-  //   const isReversed = (sortType === "Ascending") ? 1: -1;
-  //   return (isReversed * (a.price > b.price));
-  // });
 
   // ###########################################################################
-
-  // cart is stored as a state 
-  // const, setcart 
-  // if already exists , make it not appear 
-
-  //make a deep copy of array in art ..cart
-  // just remove the item (use setcart function) 
 
   const [value, setValue] = useState([]);
   const handleChange = (val) => setValue(val);
@@ -144,30 +129,16 @@ function App() {
           a diverse selection of mediums!
         </p>
       </Row>
-
-
-      <Row>
-      <Dropdown className="drop-down-btn" value={value} onChange={ handleChange }>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Sort Items
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item onClick={handleAscendingSort}>Ascending</Dropdown.Item>
-            <Dropdown.Item onClick={handleDescendingSort}>Descending</Dropdown.Item>
-            <Dropdown.Item onClick={()=>resetSort()}>Reset</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </Row>    
      
     
       <Row className="sort-row">
         <div className="sort-container">
+          <h1 className="sort-price-title"> Sort Price By:  </h1>
           <Button onClick={handleAscendingSort} className="btn btn-warning mb-4" id="ascending-bttn"> Ascending Order</Button>
           <Button onClick={handleDescendingSort} className="btn btn-warning mb-4"id="descending-bttn"> Descending Order</Button>
           <Button onClick={()=>resetSort()} className="btn btn-warning mb-4" id="reset-bttn">  Reset </Button>
         </div>
       </Row>
-    
       
       <Row className="main-row">
         <div className="main">
